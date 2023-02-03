@@ -19,6 +19,7 @@ public class WiggleCat : MonoBehaviour
     public float flyingLerp = 3f;
     public float wiggleMoveSpeed = 1f;
     public float wiggleLerp = 6f;
+    public float aimLerp = 1f;
 
 
     private float _currentMoveSpeed;
@@ -26,6 +27,8 @@ public class WiggleCat : MonoBehaviour
     private State _state;
     private Vector3 _directionVector = Vector3.right;
     private Vector3 _toPointerVector;
+    private Vector3 _lerpedPointerVector;
+
 
     private bool IsWigglePressed => Input.GetKeyDown(KeyCode.W);
 
@@ -33,6 +36,9 @@ public class WiggleCat : MonoBehaviour
     {
         Gizmos.DrawLine(Vector3.zero, _toPointerVector * 5f);
         Gizmos.DrawSphere(_toPointerVector, 0.5f);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(Vector3.zero, _lerpedPointerVector * 5f);
     }
 
     private void Start()
@@ -68,7 +74,10 @@ public class WiggleCat : MonoBehaviour
                 break;
             case State.Wiggling:
                 _toPointerVector = GetVector();
-                _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+
+                _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
+                _pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
+
 
                 if (IsWigglePressed)
                 {
