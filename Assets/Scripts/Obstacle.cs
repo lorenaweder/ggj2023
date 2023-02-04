@@ -19,18 +19,16 @@ public class Obstacle : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision collision)
     {
         print("collision enter");
-        if(other.gameObject.tag == "Player"){
+        var wiggleCat = collision.gameObject.GetComponent<WiggleCat>();
+        if(wiggleCat != null)
+        {
+            wiggleCat.TakeHit(new CatHitInfo() { Collision = collision, IsDangerousHit = isAngry });
 
-            print("other is player");
-
-            if(isAngry){
-                //hurt player;
-            }
-
-            else{
+            if (!isAngry)
+            {
                 // turn angry
                 obstacleParent.GetAngry();
             }
