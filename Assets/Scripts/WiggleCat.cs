@@ -17,10 +17,12 @@ public class WiggleCat : MonoBehaviour
         Grounded,
         Flying,
         Wiggling,
-        Stunned
+        Stunned,
+        Won
     }
 
     [Header("General")]
+    public bool canDebugStart;
     public bool allowAimFlying;
     public InputProvider inputProvider;
     public SoundProvider soundProvider;
@@ -44,6 +46,8 @@ public class WiggleCat : MonoBehaviour
     public float aimLerp = 1f;
     public float mouseAimLerp = 10f;
 
+    [Header("Animation")]
+    public Animator animator;
 
     private LevelBounds _bounds;
 
@@ -57,6 +61,9 @@ public class WiggleCat : MonoBehaviour
     private Vector3 _lerpedPointerVector;
 
     private Rigidbody _rb;
+
+    private Camera _camera;
+    private int _stateEnum = Animator.StringToHash("State");
 
     private bool IsWigglePressed => inputProvider.IsWigglePressed;
     private float KeyboardAimAxisH => inputProvider.Horizontal;
@@ -76,12 +83,32 @@ public class WiggleCat : MonoBehaviour
     {
         _bounds = FindObjectOfType<LevelBounds>();
         _rb = GetComponent<Rigidbody>();
-        Launch();
+
+        _camera = Camera.main;
+
+        _state = State.Grounded;
+
+        if (canDebugStart) Launch();
+        else MessageDispatcher.OnGameStarted += Launch;
+
+        MessageDispatcher.OnGameOver += End;
+    }
+
+    private void OnDestroy()
+    {
+        MessageDispatcher.OnGameStarted -= Launch;
+        MessageDispatcher.OnGameOver -= End;
     }
 
     private void Launch()
     {
-        _state = State.Grounded;
+        _state = State.Flying;
+        animator.SetInteger(_stateEnum, (int)_state);
+    }
+
+    private void End()
+    {
+        _state = State.Won;
     }
 
     public void TakeHit(CatHitInfo hit)
@@ -94,6 +121,7 @@ public class WiggleCat : MonoBehaviour
         if (hit.IsDangerousHit)
         {
             _state = State.Stunned;
+            animator.SetInteger(_stateEnum, (int)_state);
             _stunnedTime = Time.time;
         }
     }
@@ -106,12 +134,14 @@ public class WiggleCat : MonoBehaviour
                 if (IsWigglePressed)
                 {
                     _state = State.Flying;
+                    animator.SetInteger(_stateEnum, (int)_state);
                 }
                 break;
             case State.Flying:
                 if (IsWigglePressed)
                 {
                     _state = State.Wiggling;
+                    animator.SetInteger(_stateEnum, (int)_state);
                     return;
                 }
 
@@ -126,8 +156,9 @@ public class WiggleCat : MonoBehaviour
 
                 if (inputProvider.IsWiggleReleased)
                 {
-                    _directionVector = _toPointerVector;
+                    _directionVector = pointer.forward;
                     _state = State.Flying;
+                    animator.SetInteger(_stateEnum, (int)_state);
                     return;
                 }
 
@@ -136,12 +167,12 @@ public class WiggleCat : MonoBehaviour
                 if (Time.time - _stunnedTime > stunnedDuration)
                 {
                     _state = State.Flying;
+                    animator.SetInteger(_stateEnum, (int)_state);
                     return;
                 }
 
                 _keyboardAimAngle = LerpAngle(_keyboardAimAngle, (_keyboardAimAngle + stunnedAngleSpeed) % (Mathf.PI * 2), Time.deltaTime * mouseAimLerp);
-                _toPointerVector = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
-                pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                pointer.rotation = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Quaternion.Euler(0f, 90f, 0f);
                 break;
         }
 
@@ -205,37 +236,34 @@ public class WiggleCat : MonoBehaviour
         switch (inputProvider.ControllerType)
         {
             case ControllerType.Mouse:
-                _toPointerVector = GetMouseVector();
-                _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
-                pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
+                pointer.rotation = GetMouseQuaternion();
                 break;
             case ControllerType.Keyboard:
             case ControllerType.Joystick:
-                _toPointerVector = GetKeyboardVector();
-                pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                pointer.rotation = GetKeyboardQuaternion();
                 break;
         }
     }
 
-    private Vector3 GetKeyboardVector()
+    private Quaternion GetKeyboardQuaternion()
     {
-        if (Mathf.Approximately(KeyboardAimAxisV, 0f) && Mathf.Approximately(KeyboardAimAxisH, 0f)) return _toPointerVector;
+        if (Mathf.Approximately(KeyboardAimAxisV, 0f) && Mathf.Approximately(KeyboardAimAxisH, 0f)) return pointer.rotation;
 
         var aimInput = Mathf.Atan2(KeyboardAimAxisV, KeyboardAimAxisH);
         _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * mouseAimLerp);
 
-        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
+        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Quaternion.Euler(0f, 90f, 0f);
     }
 
-    private Vector3 GetMouseVector()
+    private Quaternion GetMouseQuaternion()
     {
-        var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
+        var midPoint = _camera.WorldToScreenPoint(transform.position);
         var pointing = Vector3.Normalize(Input.mousePosition - midPoint);
 
         var aimInput = Mathf.Atan2(pointing.y, pointing.x);
         _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * mouseAimLerp);
 
-        return Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
+        return Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Quaternion.Euler(0f, 90f, 0f);
     }
 
     float LerpAngle(float from, float to, float t)
