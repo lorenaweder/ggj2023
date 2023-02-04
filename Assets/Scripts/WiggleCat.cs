@@ -35,6 +35,7 @@ public class WiggleCat : MonoBehaviour
     [Header("Wiggle")]
     public float wiggleMoveSpeed = 1f;
     public float wiggleLerp = 6f;
+    public float releaseMultiplier = 4f;
 
     [Header("Stunned")]
     public float stunnedMoveSpeed = 10f;
@@ -159,6 +160,9 @@ public class WiggleCat : MonoBehaviour
                     _directionVector = pointer.forward;
                     _state = State.Flying;
                     animator.SetInteger(_stateEnum, (int)_state);
+
+                    _currentMoveSpeed = flyingMoveSpeed * releaseMultiplier;
+
                     return;
                 }
 
