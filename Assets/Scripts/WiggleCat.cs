@@ -93,7 +93,7 @@ public class WiggleCat : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         switch (_state)
         {
@@ -114,10 +114,6 @@ public class WiggleCat : MonoBehaviour
                 {
                     Aim();
                 }
-
-                _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, flyingMoveSpeed, Time.deltaTime * flyingLerp);
-                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
-
                 break;
             case State.Wiggling:
 
@@ -130,21 +126,37 @@ public class WiggleCat : MonoBehaviour
                     return;
                 }
 
-                _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, wiggleMoveSpeed, Time.deltaTime * wiggleLerp);
-                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
-
                 break;
             case State.Stunned:
-                if(Time.time - _stunnedTime > stunnedDuration)
+                if (Time.time - _stunnedTime > stunnedDuration)
                 {
                     _state = State.Flying;
                     return;
                 }
 
-                _keyboardAimAngle = LerpAngle(_keyboardAimAngle, (_keyboardAimAngle + stunnedAngleSpeed) % (Mathf.PI * 2) , Time.deltaTime * mouseAimLerp);
+                _keyboardAimAngle = LerpAngle(_keyboardAimAngle, (_keyboardAimAngle + stunnedAngleSpeed) % (Mathf.PI * 2), Time.deltaTime * mouseAimLerp);
                 _toPointerVector = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
                 _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                break;
+        }
+    }
 
+    void FixedUpdate()
+    {
+        switch (_state)
+        {
+            case State.Grounded:
+                break;
+            case State.Flying:
+                _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, flyingMoveSpeed, Time.deltaTime * flyingLerp);
+                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
+
+                break;
+            case State.Wiggling:
+                _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, wiggleMoveSpeed, Time.deltaTime * wiggleLerp);
+                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
+                break;
+            case State.Stunned:
                 _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, stunnedMoveSpeed, Time.deltaTime * stunnedLerp);
                 _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
                 break;
