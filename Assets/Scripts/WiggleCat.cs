@@ -22,8 +22,9 @@ public class WiggleCat : MonoBehaviour
 
     [Header("General")]
     public bool allowAimFlying;
-    public InputProvider _inputProvider;
-    public Transform _pointer;
+    public InputProvider inputProvider;
+    public SoundProvider soundProvider;
+    public Transform pointer;
 
     [Header("Flying")]
     public float flyingMoveSpeed = 10f;
@@ -57,9 +58,9 @@ public class WiggleCat : MonoBehaviour
 
     private Rigidbody _rb;
 
-    private bool IsWigglePressed => _inputProvider.IsWigglePressed;
-    private float KeyboardAimAxisH => _inputProvider.Horizontal;
-    private float KeyboardAimAxisV => _inputProvider.Vertical;
+    private bool IsWigglePressed => inputProvider.IsWigglePressed;
+    private float KeyboardAimAxisH => inputProvider.Horizontal;
+    private float KeyboardAimAxisV => inputProvider.Vertical;
 
 
     private void OnDrawGizmos()
@@ -123,7 +124,7 @@ public class WiggleCat : MonoBehaviour
 
                 Aim();
 
-                if (_inputProvider.IsWiggleReleased)
+                if (inputProvider.IsWiggleReleased)
                 {
                     _directionVector = _toPointerVector;
                     _state = State.Flying;
@@ -140,8 +141,13 @@ public class WiggleCat : MonoBehaviour
 
                 _keyboardAimAngle = LerpAngle(_keyboardAimAngle, (_keyboardAimAngle + stunnedAngleSpeed) % (Mathf.PI * 2), Time.deltaTime * mouseAimLerp);
                 _toPointerVector = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
-                _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
                 break;
+        }
+
+        if(inputProvider.IsMeowPressed)
+        {
+            soundProvider.PlayMeow();
         }
     }
 
@@ -196,17 +202,17 @@ public class WiggleCat : MonoBehaviour
 
     private void Aim()
     {
-        switch (_inputProvider.ControllerType)
+        switch (inputProvider.ControllerType)
         {
             case ControllerType.Mouse:
                 _toPointerVector = GetMouseVector();
                 _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
-                _pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
+                pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
                 break;
             case ControllerType.Keyboard:
             case ControllerType.Joystick:
                 _toPointerVector = GetKeyboardVector();
-                _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
                 break;
         }
     }

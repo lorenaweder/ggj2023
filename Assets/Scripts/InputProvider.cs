@@ -17,6 +17,8 @@ public class InputProvider : MonoBehaviour
     [SerializeField] private string _wiggleButton = "Accept";
     [SerializeField] private string _horizontal = "Horizontal";
     [SerializeField] private string _vertical = "Vertical";
+    [SerializeField] private KeyCode _meowKey = KeyCode.M;
+    [SerializeField] private string _meowButton = "Meow";
 
     public bool IsWiggleReleased => ControllerType switch
     {
@@ -30,6 +32,13 @@ public class InputProvider : MonoBehaviour
         ControllerType.Keyboard => Input.GetKeyDown(_wiggleKey),
         ControllerType.Joystick => Input.GetButtonDown(_wiggleButton),
         ControllerType.Mouse => Input.GetMouseButtonDown(0),
+    };
+
+    public bool IsMeowPressed => ControllerType switch
+    {
+        ControllerType.Joystick => Input.GetButtonDown(_meowButton),
+        ControllerType.Keyboard => Input.GetKeyDown(_meowKey),
+        ControllerType.Mouse => Input.GetKeyDown(_meowKey),
     };
 
     public float Horizontal => Input.GetAxis(_horizontal);
