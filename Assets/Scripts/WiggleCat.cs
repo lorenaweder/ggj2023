@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct CatHitInfo
+{
+    public Collision Collision;
+    public bool IsDangerousHit;
+}
+
 public class WiggleCat : MonoBehaviour
 {
     enum State
@@ -60,13 +66,18 @@ public class WiggleCat : MonoBehaviour
         _state = State.Grounded;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void TakeHit(CatHitInfo hit)
     {
-        var normal = collision.contacts[0].normal;
+        var normal = hit.Collision.contacts[0].normal;
         var clamped2dCollision = Vector3.ProjectOnPlane(normal, Vector3.forward);
         Debug.Log($"Collision {normal}, projected {clamped2dCollision}");
 
         _directionVector = Vector3.Reflect(_directionVector, clamped2dCollision);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        TakeHit(new CatHitInfo() { Collision = collision, IsDangerousHit = false });
     }
 
     void FixedUpdate()
