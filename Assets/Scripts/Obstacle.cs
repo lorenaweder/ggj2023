@@ -12,6 +12,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] ObstacleParent obstacleParent;
 
     [SerializeField] bool catTrigger;
+    [SerializeField] ParticleSystem activeRoots;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class Obstacle : MonoBehaviour
             {
                 // turn angry
                 obstacleParent.GetAngry();
+                activeRoots.Play();
             }
         }
     }
