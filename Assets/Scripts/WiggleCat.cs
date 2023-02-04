@@ -70,6 +70,8 @@ public class WiggleCat : MonoBehaviour
     private float KeyboardAimAxisH => inputProvider.Horizontal;
     private float KeyboardAimAxisV => inputProvider.Vertical;
 
+    [SerializeField] ParticleSystem trailParticles;
+
 
     private void OnDrawGizmos()
     {
@@ -162,6 +164,8 @@ public class WiggleCat : MonoBehaviour
                     animator.SetInteger(_stateEnum, (int)_state);
 
                     _currentMoveSpeed = flyingMoveSpeed * releaseMultiplier;
+
+                    trailParticles.Play();
 
                     return;
                 }
