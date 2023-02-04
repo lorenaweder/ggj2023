@@ -13,16 +13,7 @@ public class WiggleCat : MonoBehaviour
         Wiggling
     }
 
-    public enum Controller
-    {
-        Keyboard1,
-        Keyboard2,
-        Joystick1,
-        Joystick2,
-        DebugMouse
-    }
-
-    public Controller _controller;
+    public InputProvider _inputProvider;
     public Transform _pointer;
 
     public float flyingMoveSpeed = 10f;
@@ -30,19 +21,21 @@ public class WiggleCat : MonoBehaviour
     public float wiggleMoveSpeed = 1f;
     public float wiggleLerp = 6f;
     public float aimLerp = 1f;
+    public float mouseAimLerp = 10f;
 
 
     private float _currentMoveSpeed;
 
     private State _state;
+    private float _keyboardAimAngle;
     private Vector3 _directionVector = Vector3.right;
     private Vector3 _toPointerVector;
     private Vector3 _lerpedPointerVector;
 
 
-    private bool IsWigglePressed => Input.GetKeyDown(KeyCode.W);
-    private float KeyboardAimAxisH => Input.GetAxis("Horizontal");
-    private float KeyboardAimAxisV => Input.GetAxis("Vertical");
+    private bool IsWigglePressed => _inputProvider.IsWigglePressed;
+    private float KeyboardAimAxisH => _inputProvider.Horizontal;
+    private float KeyboardAimAxisV => _inputProvider.Vertical;
 
 
     private void OnDrawGizmos()
@@ -87,24 +80,19 @@ public class WiggleCat : MonoBehaviour
                 break;
             case State.Wiggling:
 
-                switch (_controller)
+                switch (_inputProvider.ControllerType)
                 {
-                    case Controller.DebugMouse:
+                    case ControllerType.DebugMouse:
                         _toPointerVector = GetMouseVector();
                         _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
                         _pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
                         break;
-                    case Controller.Keyboard1:
-                    case Controller.Keyboard2:
+                    case ControllerType.Keyboard:
+                    case ControllerType.Joystick:
                         _toPointerVector = GetKeyboardVector();
                         _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
                         break;
-                    case Controller.Joystick1:
-                    case Controller.Joystick2:
-                        break;
                 }
-
-                
 
 
                 if (IsWigglePressed)
@@ -121,14 +109,12 @@ public class WiggleCat : MonoBehaviour
         }
     }
 
-    public float _mouseAimLerp = 3f;
-    private float _keyboardAimAngle;
     private Vector3 GetKeyboardVector()
     {
         if (Mathf.Approximately(KeyboardAimAxisV, 0f) && Mathf.Approximately(KeyboardAimAxisH, 0f)) return _toPointerVector;
 
         var aimInput = Mathf.Atan2(KeyboardAimAxisV, KeyboardAimAxisH);
-        _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * _mouseAimLerp);
+        _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * mouseAimLerp);
 
         return  Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
     }
