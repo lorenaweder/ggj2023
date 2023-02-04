@@ -132,7 +132,12 @@ public class WiggleCat : MonoBehaviour
     private Vector3 GetMouseVector()
     {
         var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
-        return Vector3.Normalize(Input.mousePosition - midPoint);
+        var pointing = Vector3.Normalize(Input.mousePosition - midPoint);
+
+        var aimInput = Mathf.Atan2(pointing.y, pointing.x);
+        _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * mouseAimLerp);
+
+        return Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
     }
 
     float LerpAngle(float from, float to, float t)
