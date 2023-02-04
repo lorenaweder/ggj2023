@@ -16,17 +16,29 @@ public class WiggleCat : MonoBehaviour
         None,
         Grounded,
         Flying,
-        Wiggling
+        Wiggling,
+        Stunned
     }
 
     public bool _allowAimFlying;
     public InputProvider _inputProvider;
     public Transform _pointer;
 
+    [Header("Flying")]
     public float flyingMoveSpeed = 10f;
     public float flyingLerp = 3f;
+
+    [Header("Wiggle")]
     public float wiggleMoveSpeed = 1f;
     public float wiggleLerp = 6f;
+
+    [Header("Stunned")]
+    public float stunnedMoveSpeed = 10f;
+    public float stunnedLerp = 3f;
+    public float stunnedAngleSpeed = 10;
+    public float stunnedDuration = 2f;
+
+    [Header("Aim")]
     public float aimLerp = 1f;
     public float mouseAimLerp = 10f;
 
@@ -34,6 +46,7 @@ public class WiggleCat : MonoBehaviour
     private float _currentMoveSpeed;
 
     private State _state;
+    private float _stunnedTime;
     private float _keyboardAimAngle;
     private Vector3 _directionVector = Vector3.right;
     private Vector3 _toPointerVector;
@@ -73,11 +86,16 @@ public class WiggleCat : MonoBehaviour
         Debug.Log($"Collision {normal}, projected {clamped2dCollision}");
 
         _directionVector = Vector3.Reflect(_directionVector, clamped2dCollision);
+        if (hit.IsDangerousHit)
+        {
+            _state = State.Stunned;
+            _stunnedTime = Time.time;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        TakeHit(new CatHitInfo() { Collision = collision, IsDangerousHit = false });
+        TakeHit(new CatHitInfo() { Collision = collision, IsDangerousHit = Input.GetKey(KeyCode.D) });
     }
 
     void FixedUpdate()
@@ -120,6 +138,20 @@ public class WiggleCat : MonoBehaviour
                 _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, wiggleMoveSpeed, Time.deltaTime * wiggleLerp);
                 _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
 
+                break;
+            case State.Stunned:
+                if(Time.time - _stunnedTime > stunnedDuration)
+                {
+                    _state = State.Flying;
+                    return;
+                }
+
+                _keyboardAimAngle = LerpAngle(_keyboardAimAngle, (_keyboardAimAngle + stunnedAngleSpeed) % (Mathf.PI * 2) , Time.deltaTime * mouseAimLerp);
+                _toPointerVector = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
+                _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+
+                _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, stunnedMoveSpeed, Time.deltaTime * stunnedLerp);
+                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
                 break;
         }
     }

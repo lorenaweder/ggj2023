@@ -88,6 +88,8 @@ MonoBehaviour:
   flyingLerp: 3
   wiggleMoveSpeed: 0
   wiggleLerp: 6
+  stunnedMoveSpeed: 10
+  stunnedLerp: 3
   aimLerp: 2
   mouseAimLerp: 10
 --- !u!114 &9135667899120232046
@@ -230,7 +232,6 @@ GameObject:
   - component: {fileID: 6091046617520080007}
   - component: {fileID: 6091046617520080004}
   - component: {fileID: 6091046617520080005}
-  - component: {fileID: 6091046617520080006}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -303,16 +304,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6091046617520080006
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6091046617520080008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
