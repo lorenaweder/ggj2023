@@ -126,7 +126,7 @@ public class WiggleCat : MonoBehaviour
 
                 if (inputProvider.IsWiggleReleased)
                 {
-                    _directionVector = _toPointerVector;
+                    _directionVector = pointer.forward;
                     _state = State.Flying;
                     return;
                 }
@@ -140,8 +140,7 @@ public class WiggleCat : MonoBehaviour
                 }
 
                 _keyboardAimAngle = LerpAngle(_keyboardAimAngle, (_keyboardAimAngle + stunnedAngleSpeed) % (Mathf.PI * 2), Time.deltaTime * mouseAimLerp);
-                _toPointerVector = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
-                pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                pointer.rotation = Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Quaternion.Euler(0f, 90f, 0f);
                 break;
         }
 
@@ -205,29 +204,26 @@ public class WiggleCat : MonoBehaviour
         switch (inputProvider.ControllerType)
         {
             case ControllerType.Mouse:
-                _toPointerVector = GetMouseVector();
-                _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
-                pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
+                pointer.rotation = GetMouseQuaternion();
                 break;
             case ControllerType.Keyboard:
             case ControllerType.Joystick:
-                _toPointerVector = GetKeyboardVector();
-                pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                pointer.rotation = GetKeyboardQuaternion();
                 break;
         }
     }
 
-    private Vector3 GetKeyboardVector()
+    private Quaternion GetKeyboardQuaternion()
     {
-        if (Mathf.Approximately(KeyboardAimAxisV, 0f) && Mathf.Approximately(KeyboardAimAxisH, 0f)) return _toPointerVector;
+        if (Mathf.Approximately(KeyboardAimAxisV, 0f) && Mathf.Approximately(KeyboardAimAxisH, 0f)) return pointer.rotation;
 
         var aimInput = Mathf.Atan2(KeyboardAimAxisV, KeyboardAimAxisH);
         _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * mouseAimLerp);
 
-        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
+        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Quaternion.Euler(0f, 90f, 0f);
     }
 
-    private Vector3 GetMouseVector()
+    private Quaternion GetMouseQuaternion()
     {
         var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
         var pointing = Vector3.Normalize(Input.mousePosition - midPoint);
@@ -235,7 +231,7 @@ public class WiggleCat : MonoBehaviour
         var aimInput = Mathf.Atan2(pointing.y, pointing.x);
         _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * mouseAimLerp);
 
-        return Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
+        return Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Quaternion.Euler(0f, 90f, 0f);
     }
 
     float LerpAngle(float from, float to, float t)
