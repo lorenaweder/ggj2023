@@ -33,6 +33,7 @@ public class WiggleCat : MonoBehaviour
     private Vector3 _toPointerVector;
     private Vector3 _lerpedPointerVector;
 
+    private Rigidbody _rb;
 
     private bool IsWigglePressed => _inputProvider.IsWigglePressed;
     private float KeyboardAimAxisH => _inputProvider.Horizontal;
@@ -50,6 +51,7 @@ public class WiggleCat : MonoBehaviour
 
     private void Start()
     {
+        _rb = GetComponent<Rigidbody>();
         Launch();
     }
 
@@ -81,7 +83,7 @@ public class WiggleCat : MonoBehaviour
                 }
 
                 _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, flyingMoveSpeed, Time.deltaTime * flyingLerp);
-                transform.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
+                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
 
                 break;
             case State.Wiggling:
@@ -96,7 +98,7 @@ public class WiggleCat : MonoBehaviour
                 }
 
                 _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, wiggleMoveSpeed, Time.deltaTime * wiggleLerp);
-                transform.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
+                _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
 
                 break;
         }
