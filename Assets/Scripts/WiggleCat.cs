@@ -20,7 +20,12 @@ public class WiggleCat : MonoBehaviour
         Stunned
     }
 
-    public bool _allowAimFlying;
+    [Header("Bounds")]
+    public Vector2 boundsCenter = new Vector2(0f, 0f);
+    public Vector2 bounds = new Vector2(70f, 70f);
+
+    [Header("General")]
+    public bool allowAimFlying;
     public InputProvider _inputProvider;
     public Transform _pointer;
 
@@ -66,6 +71,9 @@ public class WiggleCat : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(Vector3.zero, _lerpedPointerVector * 5f);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(boundsCenter, bounds);
     }
 
     private void Start()
@@ -110,7 +118,7 @@ public class WiggleCat : MonoBehaviour
                     return;
                 }
 
-                if (_allowAimFlying)
+                if (allowAimFlying)
                 {
                     Aim();
                 }
@@ -160,6 +168,32 @@ public class WiggleCat : MonoBehaviour
                 _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, stunnedMoveSpeed, Time.deltaTime * stunnedLerp);
                 _rb.position += _directionVector * _currentMoveSpeed * Time.deltaTime;
                 break;
+        }
+
+        ReboundOnBounds();
+    }
+
+    private void ReboundOnBounds()
+    {
+        if (_rb.position.x > boundsCenter.x + bounds.x * 0.5f)
+        {
+            // Right side out
+            _directionVector = Vector3.Reflect(_directionVector, Vector2.left);
+        }
+        if (_rb.position.x < boundsCenter.x - bounds.x * 0.5f)
+        {
+            // Left side out
+            _directionVector = Vector3.Reflect(_directionVector, Vector2.right);
+        }
+        if (_rb.position.y > boundsCenter.y + bounds.y * 0.5f)
+        {
+            // Top side out
+            _directionVector = Vector3.Reflect(_directionVector, Vector2.down);
+        }
+        if (_rb.position.y < boundsCenter.y - bounds.y * 0.5f)
+        {
+            // Bottom side out
+            _directionVector = Vector3.Reflect(_directionVector, Vector2.up);
         }
     }
 
