@@ -156,10 +156,10 @@ MonoBehaviour:
   _pointer: {fileID: 1159273012}
   flyingMoveSpeed: 4
   flyingLerp: 3
-  wiggleMoveSpeed: 1
+  wiggleMoveSpeed: 0
   wiggleLerp: 6
   aimLerp: 2
-  _mouseAimSpeed: 600
+  _mouseAimLerp: 5
 --- !u!4 &94054420
 Transform:
   m_ObjectHideFlags: 0

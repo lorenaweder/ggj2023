@@ -41,7 +41,9 @@ public class WiggleCat : MonoBehaviour
 
 
     private bool IsWigglePressed => Input.GetKeyDown(KeyCode.W);
-    private float KeyboardAimAxis => Input.GetAxis("Horizontal");
+    private float KeyboardAimAxisH => Input.GetAxis("Horizontal");
+    private float KeyboardAimAxisV => Input.GetAxis("Vertical");
+
 
     private void OnDrawGizmos()
     {
@@ -119,29 +121,38 @@ public class WiggleCat : MonoBehaviour
         }
     }
 
-    public float _mouseAimSpeed = 3f;
+    public float _mouseAimLerp = 3f;
     private float _keyboardAimAngle;
     private Vector3 GetKeyboardVector()
     {
-        var aimInput = KeyboardAimAxis;
-        var current = _keyboardAimAngle;
-        var change = aimInput * _mouseAimSpeed * Time.deltaTime;
-        _keyboardAimAngle += change;
-        if(aimInput > 0 && _keyboardAimAngle > 360f)
-        {
-            _keyboardAimAngle = (current + change) - 360f;
-        }
-        if(aimInput <0f && _keyboardAimAngle < 0f)
-        {
-            _keyboardAimAngle = 360f + (current + change);
-        }
+        if (Mathf.Approximately(KeyboardAimAxisV, 0f) && Mathf.Approximately(KeyboardAimAxisH, 0f)) return _toPointerVector;
 
-        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle) * Vector3.right;
+        var aimInput = Mathf.Atan2(KeyboardAimAxisV, KeyboardAimAxisH);
+        _keyboardAimAngle = LerpAngle(_keyboardAimAngle, aimInput, Time.deltaTime * _mouseAimLerp);
+
+        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle * Mathf.Rad2Deg) * Vector3.right;
     }
 
     private Vector3 GetMouseVector()
     {
         var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
         return Vector3.Normalize(Input.mousePosition - midPoint);
+    }
+
+    float LerpAngle(float from, float to, float t)
+    {
+        return from + ShortestAngle(from, to) * t;
+    }
+
+    float ShortestAngle(float from, float to)
+    {
+        var max = Mathf.PI * 2;
+        var diff = Modulo(to - from, max);
+        return Modulo(2f * diff, max) - diff;
+    }
+
+    float Modulo(float a, float b)
+    {
+        return a - b * Mathf.Floor(a / b);
     }
 }
