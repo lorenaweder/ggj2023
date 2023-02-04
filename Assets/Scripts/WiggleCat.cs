@@ -17,10 +17,12 @@ public class WiggleCat : MonoBehaviour
         Grounded,
         Flying,
         Wiggling,
-        Stunned
+        Stunned,
+        Won
     }
 
     [Header("General")]
+    public bool canDebugStart;
     public bool allowAimFlying;
     public InputProvider inputProvider;
     public SoundProvider soundProvider;
@@ -76,12 +78,29 @@ public class WiggleCat : MonoBehaviour
     {
         _bounds = FindObjectOfType<LevelBounds>();
         _rb = GetComponent<Rigidbody>();
-        Launch();
+
+        _state = State.Grounded;
+
+        if (canDebugStart) Launch();
+        else MessageDispatcher.OnGameStarted += Launch;
+
+        MessageDispatcher.OnGameOver += End;
+    }
+
+    private void OnDestroy()
+    {
+        MessageDispatcher.OnGameStarted -= Launch;
+        MessageDispatcher.OnGameOver -= End;
     }
 
     private void Launch()
     {
-        _state = State.Grounded;
+        _state = State.Flying;
+    }
+
+    private void End()
+    {
+        _state = State.Won;
     }
 
     public void TakeHit(CatHitInfo hit)
