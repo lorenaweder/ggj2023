@@ -86,11 +86,13 @@ MonoBehaviour:
   _pointer: {fileID: 6091046615553800251}
   flyingMoveSpeed: 4
   flyingLerp: 3
-  wiggleMoveSpeed: 0
+  wiggleMoveSpeed: 1
   wiggleLerp: 6
-  stunnedMoveSpeed: 10
+  stunnedMoveSpeed: 6
   stunnedLerp: 3
-  aimLerp: 2
+  stunnedAngleSpeed: 10
+  stunnedDuration: 2
+  aimLerp: 10
   mouseAimLerp: 10
 --- !u!114 &9135667899120232046
 MonoBehaviour:
