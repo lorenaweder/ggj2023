@@ -60,6 +60,8 @@ public class WiggleCat : MonoBehaviour
 
     private Rigidbody _rb;
 
+    private Camera _camera;
+
     private bool IsWigglePressed => inputProvider.IsWigglePressed;
     private float KeyboardAimAxisH => inputProvider.Horizontal;
     private float KeyboardAimAxisV => inputProvider.Vertical;
@@ -78,6 +80,8 @@ public class WiggleCat : MonoBehaviour
     {
         _bounds = FindObjectOfType<LevelBounds>();
         _rb = GetComponent<Rigidbody>();
+
+        _camera = Camera.main;
 
         _state = State.Grounded;
 
@@ -244,7 +248,7 @@ public class WiggleCat : MonoBehaviour
 
     private Quaternion GetMouseQuaternion()
     {
-        var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
+        var midPoint = _camera.WorldToScreenPoint(transform.position);
         var pointing = Vector3.Normalize(Input.mousePosition - midPoint);
 
         var aimInput = Mathf.Atan2(pointing.y, pointing.x);
