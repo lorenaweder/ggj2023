@@ -14,7 +14,7 @@ public class Goal : MonoBehaviour
 
     private void Start()
     {
-        _viewportBounds = new Bounds(Vector3.zero, Vector3.one * 2f);
+        _viewportBounds = new Bounds(Vector3.zero, Vector3.one * 1.8f);
         _mainCamera = Camera.main;
     }
 
