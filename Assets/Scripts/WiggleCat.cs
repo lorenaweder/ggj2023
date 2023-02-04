@@ -13,6 +13,16 @@ public class WiggleCat : MonoBehaviour
         Wiggling
     }
 
+    public enum Controller
+    {
+        Keyboard1,
+        Keyboard2,
+        Joystick1,
+        Joystick2,
+        DebugMouse
+    }
+
+    public Controller _controller;
     public Transform _pointer;
 
     public float flyingMoveSpeed = 10f;
@@ -31,6 +41,7 @@ public class WiggleCat : MonoBehaviour
 
 
     private bool IsWigglePressed => Input.GetKeyDown(KeyCode.W);
+    private float KeyboardAimAxis => Input.GetAxis("Horizontal");
 
     private void OnDrawGizmos()
     {
@@ -73,10 +84,25 @@ public class WiggleCat : MonoBehaviour
 
                 break;
             case State.Wiggling:
-                _toPointerVector = GetVector();
 
-                _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
-                _pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
+                switch (_controller)
+                {
+                    case Controller.DebugMouse:
+                        _toPointerVector = GetMouseVector();
+                        _lerpedPointerVector = Vector3.Lerp(_lerpedPointerVector, _toPointerVector, Time.deltaTime * aimLerp);
+                        _pointer.LookAt((transform.position + _lerpedPointerVector), Vector3.up);
+                        break;
+                    case Controller.Keyboard1:
+                    case Controller.Keyboard2:
+                        _toPointerVector = GetKeyboardVector();
+                        _pointer.LookAt((transform.position + _toPointerVector), Vector3.up);
+                        break;
+                    case Controller.Joystick1:
+                    case Controller.Joystick2:
+                        break;
+                }
+
+                
 
 
                 if (IsWigglePressed)
@@ -93,7 +119,27 @@ public class WiggleCat : MonoBehaviour
         }
     }
 
-    private Vector3 GetVector()
+    public float _mouseAimSpeed = 3f;
+    private float _keyboardAimAngle;
+    private Vector3 GetKeyboardVector()
+    {
+        var aimInput = KeyboardAimAxis;
+        var current = _keyboardAimAngle;
+        var change = aimInput * _mouseAimSpeed * Time.deltaTime;
+        _keyboardAimAngle += change;
+        if(aimInput > 0 && _keyboardAimAngle > 360f)
+        {
+            _keyboardAimAngle = (current + change) - 360f;
+        }
+        if(aimInput <0f && _keyboardAimAngle < 0f)
+        {
+            _keyboardAimAngle = 360f + (current + change);
+        }
+
+        return  Quaternion.Euler(0f, 0f, _keyboardAimAngle) * Vector3.right;
+    }
+
+    private Vector3 GetMouseVector()
     {
         var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
         return Vector3.Normalize(Input.mousePosition - midPoint);

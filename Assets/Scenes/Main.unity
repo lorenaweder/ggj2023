@@ -152,12 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4872697b7aa3f8d48bd788607efec9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _controller: 0
   _pointer: {fileID: 1159273012}
   flyingMoveSpeed: 4
   flyingLerp: 3
   wiggleMoveSpeed: 1
   wiggleLerp: 6
   aimLerp: 2
+  _mouseAimSpeed: 600
 --- !u!4 &94054420
 Transform:
   m_ObjectHideFlags: 0
