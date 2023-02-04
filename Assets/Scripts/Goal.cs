@@ -10,6 +10,8 @@ public class Goal : MonoBehaviour
     Camera _mainCamera;
     Bounds _viewportBounds;
 
+    bool isGameOver;
+
     private void Start()
     {
         _viewportBounds = new Bounds(Vector3.zero, Vector3.one * 2f);
@@ -18,10 +20,12 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isGameOver) return;
         var cat = other.GetComponent<WiggleCat>();
         if (cat != null)
         {
-            Debug.Log("WIN!!!");
+            MessageDispatcher.NotifyGameOver();
+            isGameOver = true;
         }
     }
 

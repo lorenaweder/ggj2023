@@ -17,10 +17,12 @@ public class WiggleCat : MonoBehaviour
         Grounded,
         Flying,
         Wiggling,
-        Stunned
+        Stunned,
+        Won
     }
 
     [Header("General")]
+    public bool canDebugStart;
     public bool allowAimFlying;
     public InputProvider inputProvider;
     public SoundProvider soundProvider;
@@ -58,6 +60,8 @@ public class WiggleCat : MonoBehaviour
 
     private Rigidbody _rb;
 
+    private Camera _camera;
+
     private bool IsWigglePressed => inputProvider.IsWigglePressed;
     private float KeyboardAimAxisH => inputProvider.Horizontal;
     private float KeyboardAimAxisV => inputProvider.Vertical;
@@ -76,12 +80,31 @@ public class WiggleCat : MonoBehaviour
     {
         _bounds = FindObjectOfType<LevelBounds>();
         _rb = GetComponent<Rigidbody>();
-        Launch();
+
+        _camera = Camera.main;
+
+        _state = State.Grounded;
+
+        if (canDebugStart) Launch();
+        else MessageDispatcher.OnGameStarted += Launch;
+
+        MessageDispatcher.OnGameOver += End;
+    }
+
+    private void OnDestroy()
+    {
+        MessageDispatcher.OnGameStarted -= Launch;
+        MessageDispatcher.OnGameOver -= End;
     }
 
     private void Launch()
     {
-        _state = State.Grounded;
+        _state = State.Flying;
+    }
+
+    private void End()
+    {
+        _state = State.Won;
     }
 
     public void TakeHit(CatHitInfo hit)
@@ -225,7 +248,7 @@ public class WiggleCat : MonoBehaviour
 
     private Quaternion GetMouseQuaternion()
     {
-        var midPoint = new Vector3(Screen.width, Screen.height, 0f) * 0.5f;
+        var midPoint = _camera.WorldToScreenPoint(transform.position);
         var pointing = Vector3.Normalize(Input.mousePosition - midPoint);
 
         var aimInput = Mathf.Atan2(pointing.y, pointing.x);
