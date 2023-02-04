@@ -2564,8 +2564,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9135667899120232046, guid: 93fe643fc8a66d5419732937c5f30c52,
         type: 3}
+      propertyPath: _meowButton
+      value: Cancel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135667899120232046, guid: 93fe643fc8a66d5419732937c5f30c52,
+        type: 3}
+      propertyPath: _wiggleButton
+      value: Submit
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135667899120232046, guid: 93fe643fc8a66d5419732937c5f30c52,
+        type: 3}
       propertyPath: ControllerType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93fe643fc8a66d5419732937c5f30c52, type: 3}
