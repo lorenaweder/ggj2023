@@ -20,10 +20,6 @@ public class WiggleCat : MonoBehaviour
         Stunned
     }
 
-    [Header("Bounds")]
-    public Vector2 boundsCenter = new Vector2(0f, 0f);
-    public Vector2 bounds = new Vector2(70f, 70f);
-
     [Header("General")]
     public bool allowAimFlying;
     public InputProvider _inputProvider;
@@ -48,6 +44,8 @@ public class WiggleCat : MonoBehaviour
     public float mouseAimLerp = 10f;
 
 
+    private LevelBounds _bounds;
+
     private float _currentMoveSpeed;
 
     private State _state;
@@ -71,13 +69,11 @@ public class WiggleCat : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(Vector3.zero, _lerpedPointerVector * 5f);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(boundsCenter, bounds);
     }
 
     private void Start()
     {
+        _bounds = FindObjectOfType<LevelBounds>();
         _rb = GetComponent<Rigidbody>();
         Launch();
     }
@@ -175,22 +171,23 @@ public class WiggleCat : MonoBehaviour
 
     private void ReboundOnBounds()
     {
-        if (_rb.position.x > boundsCenter.x + bounds.x * 0.5f)
+        if (_bounds == null) return;
+        if (_rb.position.x > _bounds.Right)
         {
             // Right side out
             _directionVector = Vector3.Reflect(_directionVector, Vector2.left);
         }
-        if (_rb.position.x < boundsCenter.x - bounds.x * 0.5f)
+        if (_rb.position.x < _bounds.Left)
         {
             // Left side out
             _directionVector = Vector3.Reflect(_directionVector, Vector2.right);
         }
-        if (_rb.position.y > boundsCenter.y + bounds.y * 0.5f)
+        if (_rb.position.y > _bounds.Top)
         {
             // Top side out
             _directionVector = Vector3.Reflect(_directionVector, Vector2.down);
         }
-        if (_rb.position.y < boundsCenter.y - bounds.y * 0.5f)
+        if (_rb.position.y < _bounds.Bottom)
         {
             // Bottom side out
             _directionVector = Vector3.Reflect(_directionVector, Vector2.up);
