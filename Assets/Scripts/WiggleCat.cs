@@ -60,7 +60,16 @@ public class WiggleCat : MonoBehaviour
         _state = State.Grounded;
     }
 
-    void Update()
+    private void OnCollisionEnter(Collision collision)
+    {
+        var normal = collision.contacts[0].normal;
+        var clamped2dCollision = Vector3.ProjectOnPlane(normal, Vector3.forward);
+        Debug.Log($"Collision {normal}, projected {clamped2dCollision}");
+
+        _directionVector = Vector3.Reflect(_directionVector, clamped2dCollision);
+    }
+
+    void FixedUpdate()
     {
         switch (_state)
         {
