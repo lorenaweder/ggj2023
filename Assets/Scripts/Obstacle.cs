@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Obstacle : MonoBehaviour
 {
@@ -14,15 +15,20 @@ public class Obstacle : MonoBehaviour
     [SerializeField] bool catTrigger;
     [SerializeField] ParticleSystem activeRoots;
 
+    [SerializeField] GameObject mushroomHat;
+    [SerializeField] GameObject angryDots;
+
+    private Vector3 angryScale = new Vector3 (1, 1, 1);
+    private Vector3 safeScale = new Vector3 (0.5f, 0.5f, 0.5f);
+
     void Start()
     {
-        print("start");
+        angryDots.transform.DOScale(safeScale, 1);
     }
 
 
     void OnCollisionEnter(Collision collision)
     {
-        print("collision enter");
         var wiggleCat = collision.gameObject.GetComponent<WiggleCat>();
         if(wiggleCat != null)
         {
@@ -39,11 +45,13 @@ public class Obstacle : MonoBehaviour
 
     public void Angry(){
         isAngry = true;
-        gameObject.GetComponent<MeshRenderer> ().material = angryMat;
+        mushroomHat.GetComponent<MeshRenderer> ().material = angryMat;
+        angryDots.transform.DOScale(angryScale, 1);
     }
 
     public void NotAngry(){
         isAngry = false;
-        gameObject.GetComponent<MeshRenderer> ().material = safeMat;
+        mushroomHat.GetComponent<MeshRenderer> ().material = safeMat;
+        angryDots.transform.DOScale(safeScale, 1);
     }
 }
