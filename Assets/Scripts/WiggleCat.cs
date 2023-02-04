@@ -46,6 +46,8 @@ public class WiggleCat : MonoBehaviour
     public float aimLerp = 1f;
     public float mouseAimLerp = 10f;
 
+    [Header("Animation")]
+    public Animator animator;
 
     private LevelBounds _bounds;
 
@@ -61,6 +63,7 @@ public class WiggleCat : MonoBehaviour
     private Rigidbody _rb;
 
     private Camera _camera;
+    private int _stateEnum = Animator.StringToHash("State");
 
     private bool IsWigglePressed => inputProvider.IsWigglePressed;
     private float KeyboardAimAxisH => inputProvider.Horizontal;
@@ -100,6 +103,7 @@ public class WiggleCat : MonoBehaviour
     private void Launch()
     {
         _state = State.Flying;
+        animator.SetInteger(_stateEnum, (int)_state);
     }
 
     private void End()
@@ -117,6 +121,7 @@ public class WiggleCat : MonoBehaviour
         if (hit.IsDangerousHit)
         {
             _state = State.Stunned;
+            animator.SetInteger(_stateEnum, (int)_state);
             _stunnedTime = Time.time;
         }
     }
@@ -129,12 +134,14 @@ public class WiggleCat : MonoBehaviour
                 if (IsWigglePressed)
                 {
                     _state = State.Flying;
+                    animator.SetInteger(_stateEnum, (int)_state);
                 }
                 break;
             case State.Flying:
                 if (IsWigglePressed)
                 {
                     _state = State.Wiggling;
+                    animator.SetInteger(_stateEnum, (int)_state);
                     return;
                 }
 
@@ -151,6 +158,7 @@ public class WiggleCat : MonoBehaviour
                 {
                     _directionVector = pointer.forward;
                     _state = State.Flying;
+                    animator.SetInteger(_stateEnum, (int)_state);
                     return;
                 }
 
@@ -159,6 +167,7 @@ public class WiggleCat : MonoBehaviour
                 if (Time.time - _stunnedTime > stunnedDuration)
                 {
                     _state = State.Flying;
+                    animator.SetInteger(_stateEnum, (int)_state);
                     return;
                 }
 
