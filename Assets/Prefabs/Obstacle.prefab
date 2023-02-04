@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 6754284218253927722}
   - component: {fileID: 6754284218253927725}
   - component: {fileID: 6754284218253927724}
-  - component: {fileID: 6754284218253927727}
   - component: {fileID: 6754284218253927723}
   - component: {fileID: 8109710966039598993}
+  - component: {fileID: 7034787869260829289}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -204,19 +204,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6754284218253927727
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6754284218253927726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6754284218253927723
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -253,6 +240,20 @@ MonoBehaviour:
   activeRoots: {fileID: 7601009385605236136}
   mushroomHat: {fileID: 7440536961581723760}
   angryDots: {fileID: 2494952544188591916}
+--- !u!136 &7034787869260829289
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754284218253927726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.27584508
+  m_Height: 0.9618462
+  m_Direction: 1
+  m_Center: {x: 0.0023846824, y: -0.019076962, z: 0}
 --- !u!1001 &18631042822374003
 PrefabInstance:
   m_ObjectHideFlags: 0

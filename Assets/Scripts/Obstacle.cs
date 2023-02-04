@@ -17,13 +17,17 @@ public class Obstacle : MonoBehaviour
 
     [SerializeField] GameObject mushroomHat;
     [SerializeField] GameObject angryDots;
+    [SerializeField] bool hasDots = true;
 
     private Vector3 angryScale = new Vector3 (1, 1, 1);
     private Vector3 safeScale = new Vector3 (0.5f, 0.5f, 0.5f);
 
     void Start()
     {
-        angryDots.transform.DOScale(safeScale, 1);
+        if(hasDots){
+            angryDots.transform.DOScale(safeScale, 1);
+        }
+        
     }
 
 
@@ -46,12 +50,19 @@ public class Obstacle : MonoBehaviour
     public void Angry(){
         isAngry = true;
         mushroomHat.GetComponent<MeshRenderer> ().material = angryMat;
-        angryDots.transform.DOScale(angryScale, 1);
+
+        if(hasDots){
+           angryDots.transform.DOScale(angryScale, 1); 
+        }
+        
     }
 
     public void NotAngry(){
         isAngry = false;
         mushroomHat.GetComponent<MeshRenderer> ().material = safeMat;
-        angryDots.transform.DOScale(safeScale, 1);
+
+        if(hasDots){
+           angryDots.transform.DOScale(safeScale, 1); 
+        }
     }
 }
