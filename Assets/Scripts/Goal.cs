@@ -16,7 +16,16 @@ public class Goal : MonoBehaviour
         _mainCamera = Camera.main;
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
+    {
+        var cat = other.GetComponent<WiggleCat>();
+        if (cat != null)
+        {
+            Debug.Log("WIN!!!");
+        }
+    }
+
+    void LateUpdate()
     {
         var rawPosInViewport = _mainCamera.WorldToViewportPoint(transform.position);
 
