@@ -70,6 +70,8 @@ public class WiggleCat : MonoBehaviour
     private float KeyboardAimAxisH => inputProvider.Horizontal;
     private float KeyboardAimAxisV => inputProvider.Vertical;
 
+    [SerializeField] ParticleSystem trailParticles;
+
 
     private void OnDrawGizmos()
     {
@@ -119,11 +121,15 @@ public class WiggleCat : MonoBehaviour
         //Debug.Log($"Collision {normal}, projected {clamped2dCollision}");
 
         _directionVector = Vector3.Reflect(_directionVector, clamped2dCollision);
+
+        soundProvider.PlayImpact();
+
         if (hit.IsDangerousHit)
         {
             _state = State.Stunned;
             animator.SetInteger(_stateEnum, (int)_state);
             _stunnedTime = Time.time;
+            soundProvider.PlayAngry();
         }
     }
 
@@ -162,6 +168,9 @@ public class WiggleCat : MonoBehaviour
                     animator.SetInteger(_stateEnum, (int)_state);
 
                     _currentMoveSpeed = flyingMoveSpeed * releaseMultiplier;
+
+                    trailParticles.Play();
+                    soundProvider.PlayCharge();
 
                     return;
                 }
