@@ -91,7 +91,11 @@ public class WiggleCat : MonoBehaviour
 
         _state = State.Grounded;
 
-        if (canDebugStart) Launch();
+        if (canDebugStart)
+        {
+            MessageDispatcher.NotifyGameStarted();
+            Launch();
+        }
         else MessageDispatcher.OnGameStarted += Launch;
 
         MessageDispatcher.OnGameOver += End;
