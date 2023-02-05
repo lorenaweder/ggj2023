@@ -656,9 +656,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6800943563848385591}
+  - component: {fileID: 7326834965714507208}
   - component: {fileID: 462152175703643080}
   - component: {fileID: 1575278048}
-  - component: {fileID: 7326834965714507208}
   m_Layer: 0
   m_Name: Twins
   m_TagString: Untagged
@@ -691,6 +691,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &7326834965714507208
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178144051331183020}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 20
+  m_AngularDrag: 20
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!136 &462152175703643080
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -726,22 +742,6 @@ MonoBehaviour:
   mushroomHat: {fileID: 6990019467445372408}
   angryDots: {fileID: 0}
   hasDots: 0
---- !u!54 &7326834965714507208
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178144051331183020}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6990019467445372408
 GameObject:
   m_ObjectHideFlags: 0

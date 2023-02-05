@@ -3989,6 +3989,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &254478394
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 445704158}
+    m_Modifications:
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Tubes (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87db2eb15e0034454b45aed984f8ad6a, type: 3}
+--- !u!4 &254478395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 254478394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &264912344
 GameObject:
   m_ObjectHideFlags: 0
@@ -4355,7 +4430,7 @@ PrefabInstance:
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
@@ -4420,61 +4495,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 294054332}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &294054334 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 294054332}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &294054335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 294054332}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &294054336 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 294054332}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &294054337
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294054336}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &294054338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294054336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 294054334}
-  mushroomHat: {fileID: 294054335}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1001 &295671001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4750,6 +4770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -4818,45 +4842,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 303387961}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &303387963 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 303387961}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &303387964 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 303387961}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &303387965 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 303387961}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &303387966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303387965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 303387963}
-  mushroomHat: {fileID: 303387964}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &309000126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6123,61 +6108,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 400003751}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &400003753 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 400003751}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &400003754 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 400003751}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &400003755 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 400003751}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &400003756
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400003755}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &400003757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400003755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 400003753}
-  mushroomHat: {fileID: 400003754}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &415967679
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,6 +6199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -6337,45 +6271,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 416961230}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &416961232 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 416961230}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &416961233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 416961230}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &416961234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 416961230}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &416961235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416961234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 416961232}
-  mushroomHat: {fileID: 416961233}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &420156189
 GameObject:
   m_ObjectHideFlags: 0
@@ -6723,12 +6618,12 @@ Transform:
   - {fileID: 1619047116}
   - {fileID: 1189963940}
   - {fileID: 1982175480}
-  - {fileID: 1799588977}
   - {fileID: 294054333}
   - {fileID: 1372333703}
   - {fileID: 1101761038}
   - {fileID: 763029685}
   - {fileID: 1106259789}
+  - {fileID: 254478395}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10240,6 +10135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -10308,45 +10207,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 693520428}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &693520430 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 693520428}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &693520431 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 693520428}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &693520432 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 693520428}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &693520433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693520432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 693520430}
-  mushroomHat: {fileID: 693520431}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &698935438
 GameObject:
   m_ObjectHideFlags: 0
@@ -10984,7 +10844,7 @@ PrefabInstance:
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
@@ -11049,61 +10909,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 763029684}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &763029686 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 763029684}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &763029687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 763029684}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &763029688 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 763029684}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &763029689
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763029688}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &763029690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763029688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 763029686}
-  mushroomHat: {fileID: 763029687}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &781228386
 GameObject:
   m_ObjectHideFlags: 0
@@ -12054,6 +11859,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -12122,45 +11931,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 832201736}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &832201738 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 832201736}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &832201739 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 832201736}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &832201740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 832201736}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &832201741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832201740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 832201738}
-  mushroomHat: {fileID: 832201739}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &833176548
 GameObject:
   m_ObjectHideFlags: 0
@@ -15649,7 +15419,7 @@ PrefabInstance:
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
@@ -15714,61 +15484,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1101761037}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1101761039 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1101761037}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1101761040 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1101761037}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1101761041 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1101761037}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1101761042
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101761041}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1101761043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101761041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1101761039}
-  mushroomHat: {fileID: 1101761040}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1001 &1106259788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15779,7 +15494,7 @@ PrefabInstance:
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
@@ -15844,61 +15559,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1106259788}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1106259790 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1106259788}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1106259791 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1106259788}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1106259792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1106259788}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1106259793
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106259792}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1106259794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106259792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1106259790}
-  mushroomHat: {fileID: 1106259791}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1133761574
 GameObject:
   m_ObjectHideFlags: 0
@@ -15990,6 +15650,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -16058,45 +15722,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1134501249}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1134501251 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1134501249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1134501252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1134501249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1134501253 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1134501249}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1134501254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134501253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 1134501251}
-  mushroomHat: {fileID: 1134501252}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1137172283
 GameObject:
   m_ObjectHideFlags: 0
@@ -17182,61 +16807,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1189963939}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1189963941 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1189963939}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1189963942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1189963939}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1189963943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1189963939}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1189963944
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189963943}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1189963945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189963943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1189963941}
-  mushroomHat: {fileID: 1189963942}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1194316512
 GameObject:
   m_ObjectHideFlags: 0
@@ -18978,61 +18548,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1307529866}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1307529868 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1307529866}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1307529869 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1307529866}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1307529870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1307529866}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1307529871
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307529870}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1307529872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307529870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1307529868}
-  mushroomHat: {fileID: 1307529869}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1307690997
 GameObject:
   m_ObjectHideFlags: 0
@@ -19641,7 +19156,7 @@ PrefabInstance:
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
         type: 3}
@@ -19706,61 +19221,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1372333702}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1372333704 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1372333702}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1372333705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1372333702}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1372333706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1372333702}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1372333707
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372333706}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1372333708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372333706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1372333704}
-  mushroomHat: {fileID: 1372333705}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1378080168
 GameObject:
   m_ObjectHideFlags: 0
@@ -21780,6 +21240,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -21848,45 +21312,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1486043543}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1486043545 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1486043543}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1486043546 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1486043543}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1486043547 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1486043543}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1486043548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486043547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 1486043545}
-  mushroomHat: {fileID: 1486043546}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1498523940
 GameObject:
   m_ObjectHideFlags: 0
@@ -23741,61 +23166,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1619047115}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1619047117 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1619047115}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1619047118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1619047115}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1619047119 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1619047115}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1619047120
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619047119}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1619047121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619047119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1619047117}
-  mushroomHat: {fileID: 1619047118}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1622992341
 GameObject:
   m_ObjectHideFlags: 0
@@ -25877,136 +25247,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1799588976
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 445704158}
-    m_Modifications:
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -16.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Tubes (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 87db2eb15e0034454b45aed984f8ad6a, type: 3}
---- !u!4 &1799588977 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 796498658366059381, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1799588976}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1799588978 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1799588976}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1799588979 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1799588976}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1799588980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1799588976}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1799588981
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799588980}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1799588982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799588980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1799588978}
-  mushroomHat: {fileID: 1799588979}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1001 &1800452475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26874,6 +26114,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -26942,45 +26186,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1884149020}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1884149022 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1884149020}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1884149023 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1884149020}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1884149024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1884149020}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1884149025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884149024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 1884149022}
-  mushroomHat: {fileID: 1884149023}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1887401345
 GameObject:
   m_ObjectHideFlags: 0
@@ -28394,61 +27599,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1982175479}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1982175481 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5658346919210374725, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1982175479}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1982175482 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175706112185867260, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1982175479}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1982175483 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8694791395245838433, guid: 87db2eb15e0034454b45aed984f8ad6a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1982175479}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1982175484
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982175483}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 20
-  m_AngularDrag: 20
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1982175485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982175483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
-  angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
-  obstacleParent: {fileID: 445704157}
-  catTrigger: 0
-  activeRoots: {fileID: 1982175481}
-  mushroomHat: {fileID: 1982175482}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1 &1992372902
 GameObject:
   m_ObjectHideFlags: 0
@@ -29530,6 +28680,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709244357}
     m_Modifications:
+    - target: {fileID: 1575278048, guid: e1e95b86637a74a34b3920ffbb4766ea, type: 3}
+      propertyPath: obstacleParent
+      value: 
+      objectReference: {fileID: 1709244356}
     - target: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
         type: 3}
       propertyPath: m_Name
@@ -29598,45 +28752,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2064927440}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2064927442 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3101298472560195568, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064927440}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2064927443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6990019467445372408, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064927440}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2064927444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178144051331183020, guid: e1e95b86637a74a34b3920ffbb4766ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064927440}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2064927445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064927444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eda6e1b538f46d4be8cc3d722a875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAngry: 0
-  safeMat: {fileID: 2100000, guid: a0c469adb251f4d3bae6913a29359588, type: 2}
-  angryMat: {fileID: 2100000, guid: 4d4535858a76a4dabb10da5015ec47c0, type: 2}
-  obstacleParent: {fileID: 1709244356}
-  catTrigger: 0
-  activeRoots: {fileID: 2064927442}
-  mushroomHat: {fileID: 2064927443}
-  angryDots: {fileID: 0}
-  hasDots: 0
 --- !u!1001 &2065285880
 PrefabInstance:
   m_ObjectHideFlags: 0
