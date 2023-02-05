@@ -52,5 +52,6 @@ public class GameStart : MonoBehaviour
     private void StartGame()
     {
         MessageDispatcher.NotifyGameStarted();
+        gameObject.SetActive(false);
     }
 }
