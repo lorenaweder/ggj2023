@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75119cb8c0d160f4ea1608555a640c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ControllerType: 0
+  ControllerType: 3
   _wiggleKey: 102
   _wiggleButton: Accept
   _horizontal: Horizontal

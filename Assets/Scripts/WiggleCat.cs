@@ -259,6 +259,11 @@ public class WiggleCat : MonoBehaviour
             case ControllerType.Joystick:
                 pointer.rotation = GetKeyboardQuaternion();
                 break;
+            case ControllerType.Any:
+                if(inputProvider.IsWiggleMouseHeld) pointer.rotation = GetMouseQuaternion();
+                else pointer.rotation = GetKeyboardQuaternion();
+                break;
+
         }
     }
 
