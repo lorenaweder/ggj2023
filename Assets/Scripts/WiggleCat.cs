@@ -121,11 +121,15 @@ public class WiggleCat : MonoBehaviour
         //Debug.Log($"Collision {normal}, projected {clamped2dCollision}");
 
         _directionVector = Vector3.Reflect(_directionVector, clamped2dCollision);
+
+        soundProvider.PlayImpact();
+
         if (hit.IsDangerousHit)
         {
             _state = State.Stunned;
             animator.SetInteger(_stateEnum, (int)_state);
             _stunnedTime = Time.time;
+            soundProvider.PlayAngry();
         }
     }
 
@@ -166,6 +170,7 @@ public class WiggleCat : MonoBehaviour
                     _currentMoveSpeed = flyingMoveSpeed * releaseMultiplier;
 
                     trailParticles.Play();
+                    soundProvider.PlayCharge();
 
                     return;
                 }
