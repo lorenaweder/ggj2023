@@ -90,7 +90,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fresnel_Opacity: 0.5
+    - _Fresnel_Opacity: 0.3
     - _Fresnel_Power: 3
     - _GlossMapScale: 0
     - _Glossiness: 0
