@@ -11365,21 +11365,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754284218253927722, guid: cc698e594b5b95742a33d71897993d8f,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6806
-      objectReference: {fileID: 0}
-    - target: {fileID: 6754284218253927722, guid: cc698e594b5b95742a33d71897993d8f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6806
-      objectReference: {fileID: 0}
-    - target: {fileID: 6754284218253927722, guid: cc698e594b5b95742a33d71897993d8f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.6806
-      objectReference: {fileID: 0}
-    - target: {fileID: 6754284218253927722, guid: cc698e594b5b95742a33d71897993d8f,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.31
       objectReference: {fileID: 0}
@@ -11433,11 +11418,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 8039868392182126451, guid: cc698e594b5b95742a33d71897993d8f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
     - target: {fileID: 8109710966039598993, guid: cc698e594b5b95742a33d71897993d8f,
         type: 3}
       propertyPath: obstacleParent

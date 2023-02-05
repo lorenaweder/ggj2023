@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAngry: 0
-  safeMat: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
+  safeMat: {fileID: 2100000, guid: ef55ed93048b94fa3855f92127bec599, type: 2}
   angryMat: {fileID: 2100000, guid: af79e0f613f724a7aa2c268acf17be8b, type: 2}
   obstacleParent: {fileID: 0}
   catTrigger: 0
@@ -632,7 +632,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3c8ee7b0bee474eb4ba54efe78942916, type: 2}
+      objectReference: {fileID: 2100000, guid: ef55ed93048b94fa3855f92127bec599, type: 2}
     - target: {fileID: 8100320773420232829, guid: 7b5f1361128274a34bc410392d976943,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
