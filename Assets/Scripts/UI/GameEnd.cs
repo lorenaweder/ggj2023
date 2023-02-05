@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,8 @@ public class GameEnd : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private GameObject _other;
     [SerializeField] private Button _next;
+    [SerializeField] private TextMeshProUGUI _time;
+    [SerializeField] private string _textFormat;
 
     private void Awake()
     {
@@ -46,6 +49,8 @@ public class GameEnd : MonoBehaviour
 
     private void ShowResult()
     {
+        var time = FindObjectOfType<GameTimer>().TimerTime;
+        _time.SetText(string.Format(_textFormat, (TimeSpan.FromSeconds(time)).ToString("mm\\:ss")));
         _next.onClick.AddListener(LoadRetry);
         gameObject.SetActive(true);
         DOTween.Sequence()
