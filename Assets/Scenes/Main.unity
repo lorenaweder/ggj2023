@@ -3633,6 +3633,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &225939008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8324576295534062463, guid: 89745b06cfffe2c4d9cf10446b118993,
+    type: 3}
+  m_PrefabInstance: {fileID: 1765967508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &236683636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5735,7 +5741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1765967511}
+  m_Father: {fileID: 225939008}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -71.771, y: 0, z: 0}
 --- !u!199 &376418004
@@ -21514,7 +21520,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1765967511}
+  m_Father: {fileID: 225939008}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1185303661
@@ -21548,7 +21554,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.88153803, b: 0.2971698, a: 1}
+  m_Color: {r: 0.11614456, g: 0.8490566, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -30701,12 +30707,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 6.818423, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1765967511 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8324576295534062463, guid: 89745b06cfffe2c4d9cf10446b118993,
-    type: 3}
-  m_PrefabInstance: {fileID: 1765967508}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773763122
 GameObject:
   m_ObjectHideFlags: 0
