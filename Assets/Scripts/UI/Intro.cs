@@ -12,6 +12,7 @@ public class Intro : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private Button _next;
     [SerializeField] private Button _credits;
+    [SerializeField] private GameObject _creditsPage;
 
     private void Awake()
     {
@@ -57,8 +58,7 @@ public class Intro : MonoBehaviour
 
     private void ShowCredits()
     {
-        //DOTween.Kill(_image);
-        //_image.DOFade(1f, 0f);
+        _creditsPage.SetActive(true);
     }
 
     private void EnableButtons()
