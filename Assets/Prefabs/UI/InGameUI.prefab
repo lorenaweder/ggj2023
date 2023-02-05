@@ -404,6 +404,8 @@ MonoBehaviour:
   _image: {fileID: 757713982622718705}
   _other: {fileID: 1827633493303568820}
   _next: {fileID: 956245710}
+  _time: {fileID: 8884580049420001277}
+  _textFormat: "YOU DIDN\u2019T SPACE OUT!  YOUR TIME: <color=#26B42D>{0}</color>"
 --- !u!1 &1104837390179875073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,7 +2235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 500a6f53c64572d4aae45d5b9320c2f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a54e481792789094d8efa2171b8a43c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2443,7 +2445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "YOU DIDN\u2019T SPACE OUT!  YOUR TIME: <color=#26B42D>00:00</color>"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5efd0505c4c10d247bf80972120db8db, type: 2}
   m_sharedMaterial: {fileID: 2764900758737016405, guid: 5efd0505c4c10d247bf80972120db8db,
