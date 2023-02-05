@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class Intro : MonoBehaviour
 
     private void Awake()
     {
+        EventSystem.current.SetSelectedGameObject(_next.gameObject);
+
         var t = transform as RectTransform;
 
         t.anchoredPosition = Vector3.zero;

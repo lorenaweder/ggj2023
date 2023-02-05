@@ -61,7 +61,7 @@ public class GameEnd : MonoBehaviour
 
     private void EnableButtons()
     {
-        EventSystem.current.firstSelectedGameObject = _next.gameObject;
+        EventSystem.current.SetSelectedGameObject(_next.gameObject);
 
         _next.interactable = true;
         _other.SetActive(true);

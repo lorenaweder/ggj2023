@@ -13,6 +13,7 @@ public class Credits : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private Button _back;
     [SerializeField] private GameObject _other;
+    [SerializeField] private GameObject _creditsOnIntro;
 
     bool hid;
 
@@ -59,7 +60,7 @@ public class Credits : MonoBehaviour
         _image.raycastTarget = false;
 
         _back.onClick.AddListener(Return);
-        EventSystem.current.firstSelectedGameObject = _back.gameObject;
+        EventSystem.current.SetSelectedGameObject(_back.gameObject);
     }
 
     private void Return()
@@ -71,6 +72,7 @@ public class Credits : MonoBehaviour
 
     private void Hide()
     {
+        EventSystem.current.SetSelectedGameObject(_creditsOnIntro.gameObject);
         gameObject.SetActive(false);
     }
 }
