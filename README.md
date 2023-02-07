@@ -1,4 +1,6 @@
 # Catnip Quest - GGJ 2023 Entry
+A space cat on a mission to return to Earth and find the long lost source of catnip.
+
 Game page: https://globalgamejam.org/2023/games/catnip-quest-3
 
 Play online: https://annadohy.itch.io/catnip-quest
